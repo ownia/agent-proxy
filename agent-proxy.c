@@ -552,10 +552,8 @@ static struct port_st *open_remote_port(struct port_st *peer)
 		return iport;
 	} else if (peer->remote->type == PORT_UDP ||
 		   peer->remote->type == PORT_RS232) {
-		if (peer) {
-			peer->remote->peer = peer;
-			return peer->remote;
-		}
+		peer->remote->peer = peer;
+		return peer->remote;
 	}
 	return NULL;
 }
