@@ -383,6 +383,9 @@ void parse_baud(char *rate)
 	case 230400:
 		new_baudrate = B230400;
 		break;
+	case 1500000:
+		new_baudrate = B1500000;
+		break;
 	default:
 		pr_err("Invalid baud rate given\n");
 		exit(EXIT_FAILURE);
@@ -998,6 +1001,9 @@ main(int argc, char **argv)
 		break;
 	case B230400:
 		pr_debug("Initalizing the serial port to 230400 8n1\n");
+		break;
+	case B1500000:
+		pr_debug("Initalizing the serial port to 1500000 8n1\n");
 		break;
 	default:
 		/*
